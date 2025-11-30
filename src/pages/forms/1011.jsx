@@ -66,6 +66,9 @@ export default function Form() {
     <Stack
       gap={4}
       padding={4}
+      bg="transparent"
+      width="100dvw"
+      height="100dvh"
     >
       {success ?
         <Center>
@@ -73,7 +76,7 @@ export default function Form() {
         </Center>
         :
         <>
-          <Flex direction={{ base: "column", md: "row" }} gap={4}>
+          <Flex direction={{ base: "column", lg: "row" }} gap={4}>
             <Field.Root required>
               <Field.Label>First Name <Field.RequiredIndicator /></Field.Label>
               <Input
