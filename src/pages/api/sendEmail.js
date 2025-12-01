@@ -41,8 +41,8 @@ export default async function handler(req, res) {
 
     await transporter.sendMail({
       from: `"Kasama Forms Internal" <${process.env.APP_EMAIL}>`,
-      to: "arieljericko@kasamadigital.com",
-      subject: `New Form Submission - Form #${req.form_id}`,
+      to: "bokzgacilo@gmail.com",
+      subject: `New Form Submission - Form #${req.id}`,
       text: JSON.stringify(body, null, 2),
       html: `
     <!doctype html>

@@ -3,20 +3,24 @@
 import { Button, Center, Field, Flex, Heading, Input, Stack, Textarea } from "@chakra-ui/react";
 import axios from "axios";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Form() {
+  const router = useRouter();
+  const { id, link, file_name } = router.query;
+
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [form, setForm] = useState({
-    form_id: 1011,
+    form_id: id,
     first_name: "",
     last_name: "",
     email: "",
     company: "",
     message: "",
-    file_name: "Kasama Test",
-    link: "https://framerusercontent.com/assets/MMK1mk80NmP8pBFGQMK4Khsxwc.pdf", //should be changing based on form
+    file_name: file_name,
+    link: link,
   })
 
   const isFormEmpty =
